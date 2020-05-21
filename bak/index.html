@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>title0</title>
+    <!--javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{message}} {{name}}
+        <p v-html="rawHtml"></p>
+        <div v-bind:class="color">test...</div>
+        <div @click="click0">click0</div>
+    </div>
+
+   <script type="text/javascript">
+   var data0 ={
+                message: 'hello vue',
+                name: 'name0',
+                rawHtml: '<span>span0</span>',
+                color:'red'
+            }
+        var app = new Vue({
+            el: '#app',
+            data:data0,
+        created:function(){
+            console.log('created')
+        },
+        methods:{
+            click0:function(){
+                console.log('click0')
+            }
+        }
+        }
+        );
+        app.$watch('message',function(newVal,oldVal){
+            console.log(newVal,oldVal)
+        })
+
+        data0.message="foo"
+        app.message="bar"
+        app.$data=data0
+        app.color="blue"
+
+   </script>
+   <style>
+       .red{color:red;}
+       .blue{color:blue;}
+   </style>
+</body>
+
+</html>
