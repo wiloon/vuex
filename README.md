@@ -32,3 +32,12 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+```puml
+@startuml
+user_agent -> web: /home
+web -> web: router.beforeEach()
+web -> wechat: oauth2
+@enduml
+```

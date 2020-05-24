@@ -1,14 +1,11 @@
 <template>
   <div class="about">
-    About
-    <input v-model="vin">
-    <button v-on:click="query0">Qury</button>
-    {{ msg }}
+    Login0
   </div>
 </template>
 <script>
 export default {
-  name: 'About',
+  name: 'Login',
   data: function () {
     return {
       vin: 'msg0',
